@@ -1,11 +1,13 @@
 * {
-  border: 1px solid red !important;
+  //border: 1px solid red !important;
 }
 
-body {
+#container {
+  border: 2px solid blue;
   min-width: 500px;
   max-width: 800px;
   margin: auto;
+  background-color: #9fc0f5;
 }
 
 h1, h2, p {
