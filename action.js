@@ -81,7 +81,11 @@ for (let i = 0; i < player_choices.length; i++) {
     }
 
     whp.textContent = "" + win_how_phrase + "";
-    rr.textContent = "" + outcome + " wins this round!";
+    if (outcome === "No one") {
+      rr.textContent = "Tie!";
+    } else {
+      rr.textContent = "" + outcome + " wins this round!";
+    }
     p_total.textContent = "Player's Total Score : " + player_score + "";
     c_total.textContent = "Computer's Total Score : " + computer_score + "";
     t_total.textContent = "Ties : " + ties + "";
