@@ -8,6 +8,7 @@ body {
 
 #container {
   border: 2px solid blue;
+  border-radius: 12px;
   min-width: 500px;
   max-width: 800px;
   margin: auto;
@@ -67,4 +68,23 @@ button:hover {
 	50%{	color: #f5c19f;	}
 	99%{	color: #f5c19f;	}
 	100%{	color: #000;	}
+}
+
+#pc_img {
+  width: 200px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#cc_img {
+  width: 200px;
+  display: inline-block;
+  float: right;
+  margin: 0 auto;
+}
+
+#gr_img {
+  width: 200px;
+  display: inline-block;
+  margin: 0 auto;
 }
