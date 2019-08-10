@@ -6,16 +6,14 @@ body {
   background-color: #f5ec9f;
 }
 
-#container {
+.container {
+  margin-top: 20px;
   border: 2px solid blue;
-  border-radius: 12px;
-  min-width: 500px;
-  max-width: 800px;
-  margin: auto;
   background-color: #9fc0f5;
+  border-radius: 12px;
 }
 
-h1, h2, p, button {
+h1, h2, h3, p, button {
   text-align: center;
   font-family: 'Permanent Marker', cursive;
   color: #f5c19f;
@@ -29,6 +27,7 @@ h1 {
 
 p {
   font-size: 30px;
+  color: #e49ff5;
 }
 
 button {
@@ -48,18 +47,9 @@ button:hover {
   margin-top: 20px;
 }
 
-.totals {
-  text-align: center;
-  font-size: 40px;
-}
-
-.results, p {
-  color: #e49ff5;
-}
-
 .blinking {
 	animation:blinkingText 0.8s infinite;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  //box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 @keyframes blinkingText {
@@ -70,21 +60,8 @@ button:hover {
 	100%{	color: #000;	}
 }
 
-#pc_img {
-  width: 200px;
-  display: inline-block;
-  margin: 0 auto;
-}
-
-#cc_img {
-  width: 200px;
-  display: inline-block;
-  float: right;
-  margin: 0 auto;
-}
-
-#gr_img {
-  width: 200px;
-  display: inline-block;
-  margin: 0 auto;
+#pc_img, #cc_img {
+  width: 200px;  
+  display: block;
+  margin: auto; 
 }

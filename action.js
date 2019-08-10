@@ -4,8 +4,9 @@ let computer_score = 0;
 let ties = 0;
 let round_total = 0;
 let game_winner = "";
+let win_how_phrase = "";
 
-// array to store computer play options
+//array to store computer play options
 var computerPlays = ["Rock", "Paper", "Scissors"];
 
 //computerPlay randomly returns either Rock, Paper or Scissors
@@ -46,32 +47,32 @@ function singleRound(playerSelection, computerSelection) {
   return winner;
 }
 
+//variable declaration for accessing elements within the DOM
 const results = document.querySelector(".results");
 const pc = document.getElementById('#pc');
 const cc = document.getElementById('#cc');
 const whp = document.getElementById('#whp');
-let rr = document.getElementById('#rr');
 const choice_relationship = document.createElement('p');
 const p_total = document.getElementById('#player_total');
 const c_total = document.getElementById('#computer_total');
 const t_total = document.getElementById('#ties');
+const player_choices = document.getElementsByClassName("player_choices");
 let pc_image = document.getElementById('pc_img');
 let cc_image = document.getElementById('cc_img');
-//let winner_image = document.getElementById('gr_img');
+let game_prompt = document.getElementById('#game_prompt');
+let rr = document.getElementById('#rr');
 
-const player_choices = document.getElementsByClassName("player_choices");
-let win_how_phrase = "";
-
-
+//loop to add event listener to player choice buttons
 for (let i = 0; i < player_choices.length; i++) {
   player_choices[i].addEventListener('click', function(e) {
 
     let player_choice = e.target.id;
-    pc.textContent = "Player Choice: " + player_choice + ".";
+    pc.textContent = "Player: " + player_choice;
     let computer_choice = computerPlay();
-    cc.textContent = "Computer Choice: " + computer_choice + ".";
+    cc.textContent = "Computer: " + computer_choice;
 
     let outcome = singleRound(player_choice, computer_choice);
+    game_prompt.style.display = 'none';
     console.log(outcome);
     console.log(round_total);
     console.log(player_choice);
@@ -80,15 +81,15 @@ for (let i = 0; i < player_choices.length; i++) {
     if (outcome === "No one") {
       pc_image.setAttribute('src', 'images/w_' + player_choice + '.png');
       cc_image.setAttribute('src', 'images/w_' + computer_choice + '.png');
-      win_how_phrase = "" + computer_choice + " ties with " + player_choice + ".";
+      win_how_phrase = "" + computer_choice + " ties " + player_choice + "";
     } else if (outcome === "Computer") {
       pc_image.setAttribute('src', 'images/l_' + player_choice + '.png');
       cc_image.setAttribute('src', 'images/w_' + computer_choice + '.png');
-      win_how_phrase = "" + computer_choice + " beats " + player_choice + ".";
+      win_how_phrase = "" + computer_choice + " beats " + player_choice + "";
     } else {
       pc_image.setAttribute('src', 'images/w_' + player_choice + '.png');
       cc_image.setAttribute('src', 'images/l_' + computer_choice + '.png');
-      win_how_phrase = "" + player_choice + " beats " + computer_choice + ".";
+      win_how_phrase = "" + player_choice + " beats " + computer_choice + "";
     }
 
     whp.textContent = "" + win_how_phrase + "";
@@ -97,8 +98,8 @@ for (let i = 0; i < player_choices.length; i++) {
     } else {
       rr.textContent = "" + outcome + " wins this round!";
     }
-    p_total.textContent = "Player's Total Score : " + player_score + "";
-    c_total.textContent = "Computer's Total Score : " + computer_score + "";
+    p_total.textContent = "Player's Score : " + player_score + "";
+    c_total.textContent = "Computer's Score : " + computer_score + "";
     t_total.textContent = "Ties : " + ties + "";
 
     if (round_total === 5) {
@@ -108,14 +109,12 @@ for (let i = 0; i < player_choices.length; i++) {
       document.getElementById("Scissors").disabled = true;
       if (player_score > computer_score) {
         game_winner = "Player";
-        //winner_image.setAttribute('src', '');
       } else {
         game_winner = "Computer";
-        //winner_image.setAttribute('src', '');
       }
+
       rr.textContent = "" + game_winner + " wins the game!";
       rr.classList.add("blinking");
     }
-
   })
 }

@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="main.css">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div id="container">
+  <div class="container">
 
     <div class="player_choices">
       <button id="Rock">ROCK</button>
@@ -18,27 +19,49 @@
       <button id="Scissors">SCISSORS</button>
     </div>
 
-    <div class="results">
-      <p id="#pc"></p>
-      <p id="#cc"></p>
-      <div>
-        <img id="pc_img" src="" alt="">
-        <img id="cc_img" src="" alt="">
-        <p id="#whp"></p>
+    <div id="#game_prompt" class="game_prompt">
+        <div class=col-sm></div>
+        <div class=col-sm>
+            <h2>Best of 5!</h2>
+            <h3>Click your choice to play against the computer</h3>
+        </div>
+        <div class=col-sm></div>
       </div>
-      <h2 id="#rr"></h2>
-        <!-- <img id="gr_img" src="" alt=""> -->
+
+    <div class="row">
+      <div class="col-sm">
+        <img id="pc_img" src="" alt="">
+      </div>
+      <div class="col-sm">
+        <h2 id="#rr"></h2>
+      </div>
+      <div class="col-sm">
+        <img id="cc_img" src="" alt="">
+      </div>
     </div>
 
-    <div class="totals">
-      <div>
-        <p id="#player_total"></p>
-      </div>
-      <div>
-        <p id="#computer_total"></p>
-      </div>
-      <p id="#ties"></p>
+    <div class="row">
+        <div class=col-sm>
+            <p id="#pc"></p>
+        </div>
+        <div class=col-sm>
+            <p id="#whp"></p>
+        </div>
+        <div class=col-sm>
+            <p id="#cc"></p>
+        </div>
     </div>
+
+    <div class="row">
+        <div class=col-sm>
+            <p id="#player_total"></p>
+        </div>
+        <div class=col-sm>
+            <p id="#ties"></p>
+        </div>
+        <div class=col-sm>
+            <p id="#computer_total"></p>
+        </div>
     </div>
 
   </div>
