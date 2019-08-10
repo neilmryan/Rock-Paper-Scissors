@@ -90,7 +90,7 @@ for (let i = 0; i < player_choices.length; i++) {
       pc_image.setAttribute('src', 'images/w_' + player_choice + '.png');
       cc_image.setAttribute('src', 'images/l_' + computer_choice + '.png');
       win_how_phrase = "" + player_choice + " beats " + computer_choice + "";
-    }
+    };
 
     whp.textContent = "" + win_how_phrase + "";
     if (outcome === "No one") {
@@ -109,12 +109,19 @@ for (let i = 0; i < player_choices.length; i++) {
       document.getElementById("Scissors").disabled = true;
       if (player_score > computer_score) {
         game_winner = "Player";
-      } else {
+      } else if (player_score < computer_score) {
         game_winner = "Computer";
-      }
+      } else {
+        game_winner = null;
+      };
 
-      rr.textContent = "" + game_winner + " wins the game!";
-      rr.classList.add("blinking");
+      if (game_winner === null) {
+        rr.textContent = "The match was a draw!";
+        rr.classList.add("blinking");
+      } else {
+        rr.textContent = "" + game_winner + " wins the game!";
+        rr.classList.add("blinking");
+      }
     }
   })
 }
