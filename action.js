@@ -49,18 +49,18 @@ function singleRound(playerSelection, computerSelection) {
 
 //variable declaration for accessing elements within the DOM
 const results = document.querySelector(".results");
-const pc = document.getElementById('#pc');
-const cc = document.getElementById('#cc');
-const whp = document.getElementById('#whp');
+const pc = document.getElementById('pc');
+const cc = document.getElementById('cc');
+const whp = document.getElementById('whp');
 const choice_relationship = document.createElement('p');
-const p_total = document.getElementById('#player_total');
-const c_total = document.getElementById('#computer_total');
-const t_total = document.getElementById('#ties');
+const p_total = document.getElementById('player_total');
+const c_total = document.getElementById('computer_total');
+const t_total = document.getElementById('ties');
 const player_choices = document.getElementsByClassName("player_choices");
 let pc_image = document.getElementById('pc_img');
 let cc_image = document.getElementById('cc_img');
-let game_prompt = document.getElementById('#game_prompt');
-let rr = document.getElementById('#rr');
+let game_prompt = document.getElementById('game_prompt');
+let rr = document.getElementById('rr');
 
 //loop to add event listener to player choice buttons
 for (let i = 0; i < player_choices.length; i++) {

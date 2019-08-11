@@ -61,7 +61,11 @@ button:hover {
 }
 
 #pc_img, #cc_img {
-  width: 200px;  
+  width: 300px;
   display: block;
-  margin: auto; 
+  margin: auto;
+}
+
+#rr {
+  margin-top: 80px;
 }
